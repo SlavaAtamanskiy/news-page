@@ -36,7 +36,7 @@ ul {
 .button {
   border: none;
   outline: none;
-  border-radius: 2rem;
+  border-radius: .2rem;
   font-weight: 700;
   font-family: "Arial";
   color: $white;
@@ -45,6 +45,9 @@ ul {
 }
 
 .button-round {
+  border-style: solid;
+  border-width: 2px;
+  background: $white;
   outline: none;
   border-radius: 50%;
   font-weight: 700;
@@ -52,16 +55,18 @@ ul {
   color: $white;
   text-decoration: none;
   padding: 1rem;
-  -webkit-box-shadow: 0 4px #999;
-          box-shadow: 0 4px #999;
 }
 
 .button-danger {
-  background-color: $pink;
+  border-color: $pink;
+  color: $pink;
+  font-size: 1.5rem;
 }
 
 .button-success {
-  background-color: $green;
+  border-color: $green;
+  color: $green;
+  font-size: 1.5rem;
 }
 
 .button:hover, .button-round:hover {

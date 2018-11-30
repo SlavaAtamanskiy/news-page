@@ -20,6 +20,10 @@ button:focus {
     outline: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .container {
   display: block;
 }
@@ -37,9 +41,30 @@ button:focus {
   font-family: "Arial";
   color: $white;
   text-decoration: none;
+  max-width: 12rem;
 }
 
-.button:hover {
+.button-round {
+  outline: none;
+  border-radius: 50%;
+  font-weight: 700;
+  font-family: "Arial";
+  color: $white;
+  text-decoration: none;
+  padding: 1rem;
+  -webkit-box-shadow: 0 4px #999;
+          box-shadow: 0 4px #999;
+}
+
+.button-danger {
+  background-color: $pink;
+}
+
+.button-success {
+  background-color: $green;
+}
+
+.button:hover, .button-round:hover {
   opacity: .75;
 }
 
@@ -54,6 +79,7 @@ header{
     background-size: cover;
     width:100%;
     padding: .5rem 30%;
+    margin-bottom: 2rem;
     #logo{
       display: flex;
       color: $white;
@@ -106,7 +132,7 @@ header{
         padding: 0rem 2rem;
       }
       a:hover{
-        background-color:$grey;
+        background-color:$white;
         color:$darkgrey;
         padding-top: .5rem;
         padding-bottom: .6rem;
@@ -114,23 +140,21 @@ header{
         border-radius: 5px 5px 0 0;
       }
       a:active{
-        background-color:$grey;
-        color:black;
+        background-color:$white;
+        color:$black;
         padding-top: .5rem;
         padding-bottom: .6rem;
         opacity: 1!important;
         border-radius: 5px 5px 0 0;
       }
     }
-    p{
-      //display: inline-block;
-    }
 }
 
 //-----------Body styles-------------
 .content-body {
-  width: 100%;
-  //padding: 5rem;
+   background-color: $grey;
+   padding-top: 3rem;
+   width: 100%;
   .rubric {
     display: block;
     background-color: $grey;
@@ -141,26 +165,65 @@ header{
        font-size: 2.5rem;
        color: $white;
     }
+    .headline {
+      color: $white;
+      font-size: 1.5rem;
+    }
    .rubric-blocks {
         display: flex;
-        justify-content:flex-start;
+        justify-content:center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
   }
 }
 
 .rubric-block {
-       margin: 5px;
+       flex:1;
+       display: flex;
+       flex-flow: column nowrap;
+       justify-content: space-between;
+       border-radius: .2rem;
        background-color: $white;
-       &:nth-child(1) {
-          flex:0 0 25%;
+       margin: 5px;
+       padding: 1rem 1rem 2rem 2rem;
+       h4 {
+          margin: 0;
+          font-size: 2.5rem;
+          color: $darkgrey;
        }
        p {
+          text-align: left;
           margin: 0 0 2rem 0;
           color: $darkgrey;
         }
+        img {
+          width: 400px;
+          height: 400px;
+        }
+        .fishes {
+          margin-bottom: 2.5rem;
+        }
+        .grandma {
+          margin-top: 1rem;
+        }
        .button {
            padding: .5rem 2rem;
+           background-color: $blue;
         }
+}
+
+.rubric-block-grid {
+   background-color: $white;
+   border-radius: .2rem;
+   margin: 5px;
+  .image-container {
+          @include grid(2%);
+          img {
+              width: 300px;
+              height: 300px;
+          }
+    }
 }
 //-----------Footer styles-------------
 footer {
@@ -187,6 +250,6 @@ footer {
       }
       a:hover {
         color:$darkgrey;
-      }
+     }
    }
 }
